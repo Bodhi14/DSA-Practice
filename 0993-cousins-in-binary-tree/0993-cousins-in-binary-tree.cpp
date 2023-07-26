@@ -47,7 +47,6 @@ public:
     }
     bool isCousins(TreeNode* root, int x, int y) {
          dfs(root, 0);
-         cout<<isSameDepth(root, x, y);
          return (parent[x]!=parent[y] && isSameDepth(root, x, y));
     }
 };
