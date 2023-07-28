@@ -14,7 +14,6 @@ public:
     string serialize(TreeNode* r) {
         string s;
         encode(r,s);
-        cout<<s<<endl;
         return s;
     }
     
