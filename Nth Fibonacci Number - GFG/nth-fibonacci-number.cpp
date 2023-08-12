@@ -11,8 +11,8 @@ class Solution {
       
       int solve(int n, int curr, vector<int>& memo) {
           //base case
-          if(curr<=2) return memo[curr] = 1;
           if(memo[curr]!=-1) return memo[curr];
+          if(curr<=2) return memo[curr] = 1;
           return memo[curr] = (solve(n, curr-1, memo)%upper + solve(n, curr-2, memo)%upper)%upper;
       }
     int nthFibonacci(int n){
