@@ -20,7 +20,26 @@ public:
         return dp[i][j] = ways;
     }
     int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {
-        vector<vector<int>> dp(obstacleGrid.size(), vector<int>(obstacleGrid[0].size(), -1));
-        return solve(0, 0, obstacleGrid, dp);
+        //vector<vector<int>> dp(obstacleGrid.size(), vector<int>(obstacleGrid[0].size(), -1));
+        //return solve(0, 0, obstacleGrid, dp);
+        
+        //using tabulation method here
+        vector<vector<int>> memory(obstacleGrid.size(), vector<int>(obstacleGrid[0].size(), 0));
+        if(obstacleGrid[0][0]==1) return 0;
+        memory[0][0] = 1;
+        for(int i=0;i<obstacleGrid.size();++i) {
+            for(int j=0;j<obstacleGrid[0].size();++j) {
+                if(i==0 && j==0) continue;
+                if(obstacleGrid[i][j]) continue;
+                
+                int left = 0, up = 0;
+                if(i>=1) up = memory[i-1][j];
+                if(j>=1) left = memory[i][j-1];
+                memory[i][j] = up + left;
+            }
+        }
+        
+                  
+        return memory[obstacleGrid.size()-1][obstacleGrid[0].size() - 1];
     }
 };
