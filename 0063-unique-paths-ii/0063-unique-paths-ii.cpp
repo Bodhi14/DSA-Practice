@@ -24,11 +24,13 @@ public:
         //return solve(0, 0, obstacleGrid, dp);
         
         //using tabulation method here
-        vector<vector<int>> memory(obstacleGrid.size(), vector<int>(obstacleGrid[0].size(), 0));
+        int n = obstacleGrid.size();
+        int m = obstacleGrid[0].size();
+        vector<vector<int>> memory(n, vector<int>(m, 0));
         if(obstacleGrid[0][0]==1) return 0;
         memory[0][0] = 1;
-        for(int i=0;i<obstacleGrid.size();++i) {
-            for(int j=0;j<obstacleGrid[0].size();++j) {
+        for(int i=0;i<n;++i) {
+            for(int j=0;j<m;++j) {
                 if(i==0 && j==0) continue;
                 if(obstacleGrid[i][j]) continue;
                 
@@ -40,6 +42,6 @@ public:
         }
         
                   
-        return memory[obstacleGrid.size()-1][obstacleGrid[0].size() - 1];
+        return memory[n-1][m-1];
     }
 };
