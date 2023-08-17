@@ -24,21 +24,16 @@ public:
          
            distances[x][y] = dist;
            q.pop();
-           if(x<n-1 && !vis[x+1][y]) {
-               q.push({{x+1, y}, dist+1});
-               vis[x+1][y] = 1;
-           }
-           if(x>0 && !vis[x-1][y]) {
-               q.push({{x-1, y}, dist+1});
-               vis[x-1][y] = 1;
-           }
-           if(y<m-1 && !vis[x][y+1]){ 
-               q.push({{x, y+1}, dist+1});
-               vis[x][y+1] = 1;
-           }
-           if(y>0 && !vis[x][y-1]) {
-               q.push({{x, y-1}, dist+1});
-               vis[x][y-1] = 1;
+           
+           int dx[] = {1, 0, -1, 0};
+           int dy[] = {0, -1, 0, 1};
+           for(int i=0;i<4;++i) {
+               int row = x + dx[i];
+               int col = y + dy[i];
+               if(row<n && row>=0 && col<m && col>=0 && !vis[row][col]) {
+                   q.push({{row, col}, dist+1});
+                   vis[row][col] = 1;
+               }
            }
        }
        return distances;
