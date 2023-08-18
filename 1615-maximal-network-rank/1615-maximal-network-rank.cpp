@@ -18,20 +18,19 @@ public:
         for(auto it:mp) {
             degrees.push_back({it.first, it.second}); 
         }
-        sort(degrees.begin(), degrees.end());
-        for(auto pp:degrees) cout<<pp.first<<" "<<pp.second<<"\n";
+  
+        
         int m = degrees.size();
         for(int i=0;i<m;++i) {
             int connection1 = degrees[i].second;
-            for(int j=i+1;j<m;++j) {
+            for(int j=0;j<m;++j) {
                 if(j==i) continue;
                 int connection2 = degrees[j].second;
                 int connections = connection1 + connection2;
                 if(s.find({degrees[i].first, degrees[j].first})!=s.end() || s.find({degrees[j].first, degrees[i].first})!=s.end()) {
-                    cout<<degrees[i].first<<" and "<<degrees[j].first<<" are connected"<<"\n";
                     --connections;
                 }
-                // cout<<degrees[i].second<<" "<<degrees[j].second<<" "<<connections<<"\n";
+               
                 ans = max(ans, connections);
             }
         }
