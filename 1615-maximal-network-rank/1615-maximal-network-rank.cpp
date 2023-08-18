@@ -18,8 +18,6 @@ public:
         for(auto it:mp) {
             degrees.push_back({it.first, it.second}); 
         }
-  
-        
         int m = degrees.size();
         for(int i=0;i<m;++i) {
             int connection1 = degrees[i].second;
