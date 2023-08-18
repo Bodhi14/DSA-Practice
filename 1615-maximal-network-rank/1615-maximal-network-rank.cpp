@@ -28,7 +28,6 @@ public:
                 if(s.find({degrees[i].first, degrees[j].first})!=s.end() || s.find({degrees[j].first, degrees[i].first})!=s.end()) {
                     --connections;
                 }
-               
                 ans = max(ans, connections);
             }
         }
