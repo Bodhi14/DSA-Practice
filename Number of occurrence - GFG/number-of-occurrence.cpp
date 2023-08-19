@@ -8,10 +8,10 @@ using namespace std;
 //User function template for C++
 class Solution{
 public:	
-	/* if x is present in arr[] then returns the count
-		of occurrences of x, otherwise returns 0. */
 	int count(int arr[], int n, int x) {
 	    int low = 0, high = n-1, lowInd = -1;
+	    //code for lower bound
+	    //in equal condition, eliminate right half
 	    while(low<=high) {
 	        int mid = low + (high-low)/2;
 	        if(arr[mid]==x) lowInd = mid;
@@ -21,6 +21,8 @@ public:
 	    if(lowInd==-1) return 0;
 	    low = 0, high = n-1;
 	    int highInd = -1;
+	    //code for higher bound
+	    //in equal condition, eliminate left half
 	    while(low<=high) {
 	        int mid = low + (high-low)/2;
 	        if(arr[mid]==x) highInd = mid;
