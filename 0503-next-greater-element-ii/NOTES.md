@@ -1,1 +1,1 @@
-​
+For monotonic stack, always store by index, it maintains data integrity
