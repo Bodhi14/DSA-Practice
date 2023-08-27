@@ -14,7 +14,7 @@ public:
     bool canCross(vector<int>& stones) {
         int n = (int)stones.size();
         int max_diff = stones[n-1] - stones[0];
-        vector<vector<int>> dp(n+1, vector<int> (2006, -1));
+        vector<vector<int>> dp(n+1, vector<int> (2001, -1));
         return solve(stones, n, 0, 0, dp);
     }
 }; 
