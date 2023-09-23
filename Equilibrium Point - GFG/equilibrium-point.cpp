@@ -11,14 +11,12 @@ class Solution{
     // n: size of array
     int equilibriumPoint(long long a[], int n) {
         if(n==1) return a[0];
-        long long preSum[n] = {0};
-        long long postSum[n] = {0};
-        preSum[0] = a[0];
-        postSum[n-1] = a[n-1];
-        for(int i=1;i<n;++i) preSum[i]=preSum[i-1] + a[i];
-        for(int i=n-2;i>=0;i--) postSum[i] = postSum[i+1] + a[i];
-        for(int i=1;i<n-1;i++) {
-            if(preSum[i-1]==postSum[i+1]) return i+1;
+        int left = 0, right = 0;
+        for(int i=1;i<n;++i) right+=a[i];
+        for(int i=1;i<n;++i) {
+            left+=a[i-1];
+            right-=a[i];
+            if(left==right) return i+1;
         }
         return -1;
     }
