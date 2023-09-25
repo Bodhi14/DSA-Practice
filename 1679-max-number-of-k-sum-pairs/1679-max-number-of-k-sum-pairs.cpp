@@ -6,12 +6,13 @@ public:
         int i=0, j = n-1;
         int ans = 0;
         while(i<j) {
-            if(nums[i]+nums[j]==k) {
+            int sum = nums[i] + nums[j];
+            if(sum==k) {
                 i++;
                 j--;
                 ans++;
             }
-            else if(nums[i]+nums[j]<k) {
+            else if(sum<k) {
                 i++;
             }
             else {
@@ -19,6 +20,5 @@ public:
             }
         }
         return ans;
-        
     }
 };
