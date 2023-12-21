@@ -20,7 +20,7 @@ public:
         pen->next->next = head->next;
         head->next = pen->next;
         
-        pen->next = NULL;
+        pen->next = NULL; // Breaking the end link and creating a new sub problem
         // Recursing for the remaining elements
         reorderList(head->next->next);
     }
