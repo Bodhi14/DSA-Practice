@@ -21,7 +21,7 @@ int solve(vector<vector<char>>& matrix, int i , int j ,int& maxi,vector<vector<i
         return dp[i][j];
     }
     else
-        return 0 ;
+    return 0;
 
 }
     int maximalSquare(vector<vector<char>>& matrix)
@@ -29,9 +29,8 @@ int solve(vector<vector<char>>& matrix, int i , int j ,int& maxi,vector<vector<i
         int n = matrix.size();
         int m = matrix[0].size();
         vector<vector<int>>dp(n,vector<int>(m,-1));
-
         int maxi = 0;
-        int s=solve(matrix, 0,0 , maxi,dp);
-          return maxi * maxi; 
+        int s=solve(matrix,0,0, maxi,dp);
+        return maxi * maxi; 
     }
 };
