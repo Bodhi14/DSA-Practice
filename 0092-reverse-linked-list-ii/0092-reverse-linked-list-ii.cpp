@@ -19,8 +19,6 @@ public:
             else
                 break;
         }
-        
-        // cout<<t1->val<<" "<<l->val<<" "<<r->val<<" "<<t2->val;
         ListNode *prev = l;
         ListNode *curr = l->next;
         ListNode *forward = NULL;
