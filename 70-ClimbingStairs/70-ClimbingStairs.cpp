@@ -1,7 +1,7 @@
 class Solution {
 public:
     int climbStairs(int n) {
-        int dp[46] = {0};
+        vector<int> dp(n+1, 0);
         dp[0] = 0;
         dp[1] = 1;
         dp[2] = 2;
