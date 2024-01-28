@@ -1,9 +1,8 @@
-
+    }
     return maxi;
-}
-
-    int maxDepth(string s) {
-        return solve(s);
     }
 };
+       }
+        temp--;
+          maxi = max(maxi, temp);
 "
