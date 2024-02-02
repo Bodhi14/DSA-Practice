@@ -6,5 +6,5 @@
     int findNonMinOrMax(vector<int>& nums) {
 public:
 class Solution {
-        if(nums.size()<=2) return -1;
+        for(int x:nums) if(x!=min_num && x!=max_num) return x;
 [
