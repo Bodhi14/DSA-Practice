@@ -1,11 +1,10 @@
-        }
-        for(int j = 0; j<m; ++j) {
-            if(arr[j]<=tgt) ans = min(ans, 1 + solve(arr, m, tgt-arr[j], dp));
-    int solve(vector<int>& arr, int m, int tgt, vector<int>& dp) {
-        if(tgt==0) return 0;
+    int solve(int i, vector<int>& arr, int m, int tgt, vector<int>& dp) {
+        if(i>=m || tgt==0) return 0;
         if(dp[tgt]!=-1) return dp[tgt];
         int ans = 1e7;
+        for(int j = i; j<m; ++j) {
+            if(arr[j]<=tgt) ans = min(ans, 1 + solve(j, arr, m, tgt-arr[j], dp));
+        }
         return dp[tgt] = ans;
-private:
-class Solution {
+        if(arr[i]>tgt) return 1e7;
 1
