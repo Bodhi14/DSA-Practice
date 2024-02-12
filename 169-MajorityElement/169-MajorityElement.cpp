@@ -1,11 +1,11 @@
-class Solution {
-public:
+            if (count == 0) {
+                ele = nums[i];
+        for (int i = 0; i < n; i++) {
+
+        int ele = 0; 
+        int count = 0;    
     int majorityElement(vector<int>& nums) {
-        sort(nums.begin(), nums.end());
-    }
-        return nums[midEle];
+public:
+class Solution {
         int n = (int)nums.size();
-        int midEle = n/2;
-        if(!(n%2)) midEle--;
-};
 [
