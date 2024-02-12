@@ -1,11 +1,12 @@
             if (count == 0) {
                 ele = nums[i];
         for (int i = 0; i < n; i++) {
-
-        int ele = 0; 
-        int count = 0;    
-    int majorityElement(vector<int>& nums) {
-public:
-class Solution {
-        int n = (int)nums.size();
+        int count = 0, ele = 0;    
+                count++;
+            } else if (ele == nums[i]) {
+                count++;
+            } else {
+                count--;
+            }
+        }
 [
