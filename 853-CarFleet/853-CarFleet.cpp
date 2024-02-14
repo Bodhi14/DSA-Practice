@@ -5,7 +5,7 @@
             }
         }
 
-        return st.size();
+        return (int)st.size();
     }
 };
 12
