@@ -1,13 +1,14 @@
-        int ans=0;
-        mp['M']=1000;
-        mp['C']=100;
-        mp['D']=500;
-        mp['L']=50;
-        mp['X']=10;
-        mp['V']=5;
-        mp['I']=1;
-        map<char, int> mp;
-public:
-    int romanToInt(string s) {
-class Solution {
-"III"
+            if(s[i]=='I' && ((s[i+1]=='V') || (s[i+1]=='X')))
+               {
+                   ans+=mp[s[i+1]]-1;
+                   i++;
+               }
+             else if(s[i]=='X' && ((s[i+1]=='L') || (s[i+1]=='C')))
+                {
+                    ans+=mp[s[i+1]]-10;
+                    i++;
+                }
+        {
+        for(int i=0;i<s.size();i++)
+        
+"
