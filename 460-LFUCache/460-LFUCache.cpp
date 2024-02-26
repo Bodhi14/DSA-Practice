@@ -1,13 +1,14 @@
-        delNext->prev = delPrev;
-        len--;
+        minFreq = 0;
+        currSize = 0;
     }
-};
 
-        Node *delPrev = delNode->prev;
-        Node *delNext = delNode->next;
-        delPrev->next = delNext;
-
-    void deleteNode(Node *delNode) {
-        len++;
+    int get(int key) {
+        if (addrOfKey.find(key) == addrOfKey.end()) {       
+            return -1;
+        }
+        Node *resNode = addrOfKey[key];                     
+        int res = resNode->val;                             
+        updateFreqListMap(resNode);                         
+        return res;                                         
     }
 [
