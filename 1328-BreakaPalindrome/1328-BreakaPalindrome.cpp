@@ -6,7 +6,7 @@
         }
         str[n - 1] = 'b';
         return str;
-        int n = (int)str.size(), end = n / 2;
+        int n = (int)str.size();
     string breakPalindrome(string str){
 public:
         if(n==1) return "";
